@@ -15,7 +15,7 @@ class UsuarioSeeder extends Seeder
     {
         $usuario = new Usuario();
         $usuario->login = "admin";
-        $usuario->password = "admin";
+        $usuario->password = bcrypt("admin");
         $usuario->save();
     }
 }

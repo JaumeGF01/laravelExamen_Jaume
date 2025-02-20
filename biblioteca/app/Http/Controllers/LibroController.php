@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 use App\Models\Libro;
 use Illuminate\Http\Request;
-use IIlluminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Routing\Controller;
 
 class LibroController extends Controller
 {
+    public function __construct(){
+        $this->middleware("auth",["only"=>["create","store","destroy"]]);
+    }
+
     /**
      * Display a listing of the resource.
      */
